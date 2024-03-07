@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>examen</title>
+    <link rel="stylesheet" href="./Front/css/style.css">
+</head>
+<body>
+    <body>
+
+        <section id="container_principal"  class="Question" style="display: block;">
+            <div class="ligne_score">
+                <p>Question <span id="nb_Q">1</span>/2</p>
+                <h1><span id="counttime">10</span>s</h1>
+            </div>
+            
+                <section id="1">
+                    <h1 class="sujet_Question">Quelle est la capitale de la france ?</h1>
+
+                    <div class="Answer">
+                        <div class="column_answer">
+                            <button id="1_good" class="answer_btn" onclick="Paris()">Paris</button>
+                            <button id="1_bad" class="answer_btn" onclick="madrid()" >Madrid</button>
+                        </div>
+                        <div class="column_answer">
+                            <button id="2_bad" class="answer_btn" onclick="Clermont()">Clermont</button>
+                            <button id="3_bad"class="answer_btn" onclick="barcelone()">Barcelone</button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="2" style="display: none;">
+                    <h1 class="sujet_Question" >Quelle est la capitale de l'Espagne ?</h1>
+                    <div class="Answer">
+                        <div class="column_answer">
+                            <button id="4_bad" class="answer_btn"  onclick="Stockolm()">Stockolm</button>
+                            <button id="5_bad" class="answer_btn"  onclick="Bern()" >Bern</button>
+                        </div>
+                        <div class="column_answer">
+                            <button id="2_good" class="answer_btn" onclick="Madrid2()" >Madrid</button>
+                            <button id="6_bad" class="answer_btn"  onclick="barcelone2()" >Barcelone</button>
+                        </div>
+                    </div>
+                </section>
+                <button id="next_Q" class="Next_question" onclick="next_Q()" >Next Question</button>
+            </section>
+
+        </section>
+        <h1 id="finish_test" style="display: none;">Le test est terminé</h1> 
+
+    </body>
+    <script src="./index.js" type="module"></script>
+</html>

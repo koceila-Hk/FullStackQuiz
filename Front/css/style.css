@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.Theme{
+    text-align: center;
+}
+.ligne_score{
+    display: flex;
+    justify-content: space-between;
+    margin: 50px;
+}
+.sujet_Question{
+    text-align: center;
+}
+.sujet_Question_1{
+    display: none;
+}
+.Answer_2{
+    display: none;
+}
+
+.Answer{
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    margin-left: 100Px;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.column_answer{
+    display: flex;
+    flex-direction: column;
+}
+.answer_btn{
+    margin-top: 10px;
+    padding: 15px ;
+}
+.Next_question{
+    display: flex;
+    justify-content: flex-end;
+    margin-left: 80%;
+    margin-top: 25px;
+    padding: 10px;
+}
+/* le css de la page identifiant */
+
+.identifiant{
+    display: flex;
+    flex-direction: column;
+    margin: 20%;
+}
+.begin_button{
+    padding: 10px;
+    margin-top: 10px;
+}
+.id_input{
+    border: solid 1px;
+    border-radius: 10px;
+    margin-top: 10px;
+    padding: 10px;
+}
+.text_teacher{
+    
+    text-align: center;
+    margin-top: 81px;
+}
