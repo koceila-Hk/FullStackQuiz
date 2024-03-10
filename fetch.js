@@ -1,3 +1,5 @@
+// ========= post =========
+
 async function registerUser(userData) {
     const requestOptions = {
         method: 'POST',
@@ -15,67 +17,98 @@ async function registerUser(userData) {
     }
 }
 
-async function search(noms) {
-    const requestOptions = {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(noms)
-    };
 
+// ======== requête GET ========
+
+async function clicDroit(nom) {
     try {
-        const response = await fetch('http://localhost:3000/api/v1/user/name', requestOptions);
-        const data = await response.json();
-        return data;
+      const response = await fetch("http://localhost:3000/nom?nom=" + encodeURIComponent(nom));
+  
+      if (!response.ok) {
+        throw new Error('Erreur HTTP, status ' + response.status);
+      }
+  
+      const responseData = await response.json();
+      return responseData;
     } catch (error) {
-        console.error('Erreur lors de l\'inscription :', error);
-        throw error;
+      console.error('Erreur lors de la requête GET :', error);
+      throw error; 
     }
-}
-// Fonction pour envoyer une requête POST au serveur backend pour enregistrer l'action suspecte
-async function addSuspectAction(userId) {
-    try {
-        const response = await fetch('http://localhost:3000/api/v1/suspect', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ userId })
-        });
+  }
 
-        if (response.ok) {
-            return {};
-        } else {
-            const errorMessage = await response.text();
-            throw new Error(errorMessage);
+
+// ========= function ctrl =========
+  
+  async function ctrlData(nom) {
+    try {
+      const response = await fetch("http://localhost:3000/ctrl?nom=" + encodeURIComponent(nom));
+  
+      if (!response.ok) {
+        throw new Error('Erreur HTTP, status ' + response.status);
+      }
+  
+      const responseData = await response.json();
+      return responseData;
+    } catch (error) {
+      console.error('Erreur lors de la requête GET :', error);
+      throw error; 
+    }
+  }
+
+// ======== function leavePage ==========
+
+async function leavePage(nom) {
+    try {
+        const response = await fetch("http://localhost:3000/leave?nom=" + encodeURIComponent(nom));
+
+        if (!response.ok) {
+            throw new Error('Erreur HTTP, status ' + response.status);
+          }
+      
+          const responseData = await response.json();
+          return responseData;
+        } catch (error) {
+            console.error('Erreur lors de la requête GET :', error);
+            throw error; 
         }
+    }
+
+
+// ======== function answersUser ===========
+
+async function answersUser(nom, list) {
+    try {
+        const response = await fetch ("http://localhost:3000/response?nom=" +encodeURIComponent(nom) + '&reponse='+encodeURIComponent(list[0]) + '&reponse2='+encodeURIComponent(list[1]));
+
+        if(!response.ok) {
+            throw new Error ('Error HTTP, status ' + response.status);
+        }
+        const responseData = await response.json();
+        return responseData;
+
     } catch (error) {
-        return { error: error.message };
+        console.error('Erreur lors de la requête GET :', error);
+        throw error; 
     }
 }
 
 
+// ========== function resizePage ============
 
+async function resizePage (nom) {
+  try {
+    const response = await fetch("http://localhost:3000/resize?nom=" +encodeURIComponent(nom));
 
-async function getUserNom() {
+    if(!response.ok) {
+      throw new Error ("Error HTTP, status ", + response.status);
+    }
+    const responseData = await response.json();
+    return responseData;
 
-
-    
-    // try {
-    //     const response = await fetch(`http://localhost:3000/api/v1/user?nom=${nom}`, {
-    //         method: 'GET',
-    //         headers: {
-    //             'Content-Type': 'application/json',
-                
-    //         }
-    //     });
-    //     const userData = await response.json();
-    //     return userData.nom;
-    // } catch (error) {
-    //     console.error('Erreur lors de la récupération de l\'nom de l\'utilisateur:', error);
-    //     return null;
-    // }
+  } catch (error) {
+    console.error('error lors de la requête get :', error);
+    throw error;
+  }
 }
 
-
-
-export {registerUser, addSuspectAction, getUserNom,search}
+export {registerUser, clicDroit, ctrlData, leavePage, answersUser, resizePage }

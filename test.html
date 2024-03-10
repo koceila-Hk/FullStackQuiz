@@ -3,52 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>examen</title>
+    <title>test</title>
     <link rel="stylesheet" href="./Front/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
 </head>
 <body>
-    <body>
+    <section class="container_principal">
 
-        <section id="container_principal"  class="Question" style="display: block;">
-            <div class="ligne_score">
-                <p>Question <span id="nb_Q">1</span>/2</p>
-                <h1><span id="counttime">10</span>s</h1>
-            </div>
-            
-                <section id="1">
-                    <h1 class="sujet_Question">Quelle est la capitale de la france ?</h1>
+        <a href=""></a>
 
-                    <div class="Answer">
-                        <div class="column_answer">
-                            <button id="1_good" class="answer_btn" onclick="Paris()">Paris</button>
-                            <button id="1_bad" class="answer_btn" onclick="madrid()" >Madrid</button>
-                        </div>
-                        <div class="column_answer">
-                            <button id="2_bad" class="answer_btn" onclick="Clermont()">Clermont</button>
-                            <button id="3_bad"class="answer_btn" onclick="barcelone()">Barcelone</button>
-                        </div>
-                    </div>
-                </section>
+        <section class="Container_QUIZ">
 
-                <section id="2" style="display: none;">
-                    <h1 class="sujet_Question" >Quelle est la capitale de l'Espagne ?</h1>
-                    <div class="Answer">
-                        <div class="column_answer">
-                            <button id="4_bad" class="answer_btn"  onclick="Stockolm()">Stockolm</button>
-                            <button id="5_bad" class="answer_btn"  onclick="Bern()" >Bern</button>
-                        </div>
-                        <div class="column_answer">
-                            <button id="2_good" class="answer_btn" onclick="Madrid2()" >Madrid</button>
-                            <button id="6_bad" class="answer_btn"  onclick="barcelone2()" >Barcelone</button>
-                        </div>
-                    </div>
-                </section>
-                <button id="next_Q" class="Next_question" onclick="next_Q()" >Next Question</button>
+            <section class="global_element">
+                <div class="Title_part">
+                    <h1 class="Title_Quiz">Quiz Capitale</h1>
+                    <h1 class="timer"><i id="timer" class="fa-solid fa-clock time"></i> <span id="countdown">10</span></h1>
+                </div>
+                
+                
+
+                <Section id="container_QCM_1">
+                    <h1 id="E1" class="Question">1. Quelle est la capitale de la France?</h1>
+
+                    <button id="r1" class="Reponse">Paris</button>
+                    <button class="Reponse">Barcelone</button>
+                    <button class="Reponse">Clermont</button>
+                    <button class="Reponse">Marseille</button>
+                </Section>
+
+                <Section id="container_QCM_2">
+                    <h1 class="Question">2. Quelle est la capitale de l'Espagne?</h1>
+                    <button class="Reponse">Le Caire</button>
+                    <button class="Reponse">Malaga</button>
+                    <button class="Reponse">Madrid</button>
+                    <button class="Reponse">Lyon</button>
+                </Section>
+                <div class="next">
+                    <input type="button" class="next_Q" value="Next" id="next">
+                </div>
             </section>
-
-        </section>
-        <h1 id="finish_test" style="display: none;">Le test est terminé</h1> 
-
-    </body>
+            <h1 class="end">Fin de l'examen</h1>
+    </section>
     <script src="./index.js" type="module"></script>
+</body>
 </html>

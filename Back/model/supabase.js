@@ -41,47 +41,7 @@ const supabase = createClient(supabaseUrl, supabaseKey);
         }
     }
 
-    // Fonction pour ajouter un utilisateur suspect dans la base de données
-    
-async function addSuspectUser(user_id, action) {
-    try {
-        const { data, error } = await supabase
-        .from('suspect')
-        .insert([{ user_id: user_id, action }]);
-        return { data, error };
-    } catch (error) {
-        return { error: error.message };
-    }
-}
-
-
-//click droit
-
-  async function click(){
-    try {
-        const  userId  = req.query.nom;
-    
-        let { data: users, error:errorName } = await supabase
-      .from('users')
-      .select("id")
-      .eq('nom', userId)
-    
-        const nom=users[0].id
-    
-    
-      
-    const { data, error } = await supabase
-    .from('suspect')
-    .insert([
-      { user_id: nom, action: 'click_droit' },
-    ])
-    .select()
-  }catch (error) {
-    return { error: error.message };
-}
-}
-
     // ====== export function =========
     
-    export { getUsers, getUser, addUser, addSuspectUser,click};    
+    export { getUsers, getUser, addUser };    
     

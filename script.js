@@ -21,3 +21,6 @@ formRegister.addEventListener('submit', async (e) => {
 
     window.location.href = './test.html?nom='+nom;
 });
+
+
+  
