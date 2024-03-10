@@ -69,7 +69,6 @@ document.addEventListener('keydown', async (event) => {
 
 document.body.addEventListener('mouseleave', async () => {
     const data = await leavePage(nom);
-    console.log(data);
 });
 
 // ========= add answers =========
@@ -91,11 +90,13 @@ button.forEach(element => {
 
 async function handleResize() {
     const data = await resizePage(nom);
-    console.log(data);
+    // console.log(data);
     return true;
   }
   window.onresize = handleResize;
 
+
+  
 // document.addEventListener('keydown', async (event) => {
 
 //     if (event.key === "v" && event.ctrlKey) {

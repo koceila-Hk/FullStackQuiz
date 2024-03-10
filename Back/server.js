@@ -140,10 +140,10 @@ app.get('/leave', async (req, res) => {
 
     const ns = users[0].id
   
-   const { data, error } = await supabase
-   .from('suspect')
-   .insert([
-   { user_id: ns, action: 'à quitté la page' },
+    const { data, error } = await supabase
+    .from('suspect')
+    .insert([
+    { user_id: ns, action: 'à quitté la page' },
 ])
     if (error) {
         throw new Error(error);
@@ -183,6 +183,7 @@ app.get('/resize', async (req, res) => {
     res.status(500).json({ error: 'Error resize page' });
 }
 });
+
 
 app.listen(port, () => {
   console.log(`Hello I'm here ${port}`)

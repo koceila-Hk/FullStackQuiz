@@ -1,13 +1,12 @@
 body{
     background-color: rgb(30, 23, 63);
     height: 100vh;
-
 }
 
 .container{
     display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-items: center;
     height: 100vh;
 }
 .Container_QUIZ {
@@ -29,9 +28,9 @@ body{
     margin-left: 40px;
     margin-right: 60px;
 }
+
 .timer{
     font-size: 25px;
-   
 }
 
 .time{
@@ -40,7 +39,6 @@ body{
 }
 .Title_Quiz{
     font-size: 25px;
-    
 }
 
 .Question{
@@ -95,14 +93,65 @@ body{
 
 
 .end{
+    font-size: 50px;
+    margin-top: 35%;
+    justify-content: center; 
+    align-items: center; 
+    
     display: none;
 }
 
-/* partie réponse questio */ 
+
 
 #container_QCM_2{
     display: none;
 }
 #E2{
     display: none;
+}
+
+
+/* ============================================ */
+
+.container {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    flex-direction: column;
+    height: 100vh;
+}
+
+.identifiant {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 45px;
+    border-radius:10px ;
+}
+
+input {
+    border: 1px solid;
+    border-radius: 8px;
+    padding:15px;
+    margin: 5px;
+    width: 250px;
+    
+}
+
+.begin_button:hover {
+    background-color: rgb(30, 23, 63);
+    color: white;
+    cursor: pointer;
+}
+
+h1 {
+    text-align: center;
+    color:rgb(30, 23, 63);
+}
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

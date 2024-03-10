@@ -3,20 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partiel</title>
+    <title>Register</title>
+
+    <link rel="stylesheet" href="./Front/css/style.css">
 </head>
 <body>
-    
     <section>
-        <h1>Quelle sont vos infos ?</h1> 
-        <form id="formRegister"> 
-            <input type="text" id="nom" placeholder="Votre nom">
-            <input type="text" id="prenom" placeholder="Votre prénom">
-            <input type="text" id="promo" placeholder="Votre promo">
-            <input type="submit" value="Commencer le test" class="begin_button">
-        </form>
-    </section>
-    
+    <div class="container"> 
+
+        <div class="identifiant">
+            <h1>Quelle sont vos infos ?</h1> 
+
+            <form id="formRegister">
+
+                <input id="nom" type="text" placeholder="Entrez votre Nom de famille">
+                <input id="prenom" type="text" placeholder="Entrez votre prénom">
+                <input id="promo" type="text" placeholder="Votre promo">
+                <input type="submit" value="Commencer le test" class="begin_button">
+            </form>
+        </div>
+    </div>
+   </section>  
 </body>
 <script src="./script.js" type="module"></script>
 </html>

@@ -111,4 +111,5 @@ async function resizePage (nom) {
   }
 }
 
+
 export {registerUser, clicDroit, ctrlData, leavePage, answersUser, resizePage }
