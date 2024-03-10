@@ -1,3 +1,5 @@
+/* Ce fichier CSS a été créé par mon collègue */
+
 body{
     background-color: rgb(30, 23, 63);
     height: 100vh;
@@ -101,14 +103,11 @@ body{
     display: none;
 }
 
-
-
 #container_QCM_2{
     display: none;
 }
-#E2{
-    display: none;
-}
+
+
 
 
 /* ============================================ */
