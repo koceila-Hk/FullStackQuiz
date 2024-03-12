@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', function() {
     const countdownElement = document.getElementById('countdown');
-    const q1 = document.getElementById("container_QCM_1");
-    const q2 = document.getElementById("container_QCM_2");
-    const next=document.querySelector('#next')
+    const q1   = document.getElementById("container_QCM_1");
+    const q2   = document.getElementById("container_QCM_2");
+    const next = document.querySelector('#next')
     
     next.addEventListener('click',function(){
         q1.style.display = "none";
-        q2.style.display = "block";
+        q2.style.display = "flex";
     })
 
     function check() {
         if (countdownElement.textContent === "Temps écoulé" ) {
             q1.style.display = "none";
-            q2.style.display = "block";
+            q2.style.display = "flex";
             start();
         }
     }
@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     start();
 });
+
 
 
                  // ========== récupérer les données de l'utilisateur ============== 
@@ -79,7 +80,7 @@ const button = document.querySelectorAll("button");
 button.forEach(element => {
         element.addEventListener('click', async () => {
             list.push(element.innerHTML)
-            // console.log(list);
+            console.log(list);
             if (list.length == 2) {
                 const data = await answersUser(nom, list);
             }
@@ -90,7 +91,7 @@ button.forEach(element => {
 
 async function handleResize() {
     const data = await resizePage(nom);
-    // console.log(data);
+    console.log(data);
     return true;
   }
   window.onresize = handleResize;

@@ -1,156 +1,126 @@
-/* Ce fichier CSS a été créé par mon collègue */
-
 body{
-    background-color: rgb(30, 23, 63);
     height: 100vh;
 }
 
-.container{
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+* {
+    margin: 0;
+}
+
+
+#test {
+    background-image: url(/Front/img/test_quiz.jpeg);
+    background-position: center;
+    background-size: cover;
     height: 100vh;
 }
-.Container_QUIZ {
-    width: 600px;
-    height: 500px; 
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
-.Title_part{
+.global-element {
+    display: flex; 
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.Title-test {
     display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid;
-    margin-left: 40px;
-    margin-right: 60px;
 }
 
-.timer{
-    font-size: 25px;
+.Title-test h1 {
+    font-size: 30px;
 }
 
-.time{
-    font-size: 28px;
-    margin-right: 10px;
-}
-.Title_Quiz{
-    font-size: 25px;
+#container_QCM_1,
+#container_QCM_2 {
+    backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
-.Question{
+#container_QCM_2 {
+    display: none;
+}
+
+h1 {
+    color: #fff;
     font-size: 18px;
     margin-left: 40px;
     margin-right: 60px;
-
 }
-.Reponse{
-    margin-top: 10px;
+button {
+    background: none;
+    color: #FFF;
+    margin: 10px;
     padding: 14px;
     text-align: left;
     width: 510px;
-    margin-left: 40px;
-    margin-right: 60px;
     border-radius: 10px;
     border: 1px solid;
-}
-
-.Reponse:hover{
-    background-color: rgb(30, 23, 63);
-    color: white;
     cursor: pointer;
-    
+}
+
+input {
+    background: none;
+    padding: 5px 10px;
+    border: 3px solid #26439bdd;
+    color: #FFF;
+    cursor: pointer;
+}
+
+input:hover,
+button:hover {
+    background-color: rgba(125, 136, 160, 0.336);
 }
 
 
-.next{
+#end {
+    background-image: url(/Front/img/test_quiz.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    /* display: none; */
+}
+
+#end h1 {
     display: flex;
     justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 40px;
 }
-
-.next_Q:hover{
-    background-color: initial;
-    color: initial;
-    border: 1px solid;
-}
-
-
-.next_Q{
-    background-color: rgb(30, 23, 63);
-    color: white;
-    border-radius: 5px;
-    margin-top: 20px;
-    padding-left: 50px;
-    padding-right: 50px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-size: 15px;
-    cursor: pointer;
-}
-
-
-.end{
-    font-size: 50px;
-    margin-top: 35%;
-    justify-content: center; 
-    align-items: center; 
-    
-    display: none;
-}
-
-#container_QCM_2{
-    display: none;
-}
-
-
-
 
 /* ============================================ */
+
+
+#register {
+    background-image: url(/Front/img/Quiz.jpeg);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
 
 .container {
     display: flex;
     justify-content: center; 
-    align-items: center; 
-    flex-direction: column;
+    align-items: center;
     height: 100vh;
 }
 
-.identifiant {
+#formRegister {
     display: flex;
     flex-direction: column;
-    background-color: rgb(255, 255, 255);
-    padding: 45px;
-    border-radius:10px ;
-}
-
-input {
-    border: 1px solid;
-    border-radius: 8px;
-    padding:15px;
-    margin: 5px;
-    width: 250px;
-    
-}
-
-.begin_button:hover {
-    background-color: rgb(30, 23, 63);
-    color: white;
-    cursor: pointer;
-}
-
-h1 {
-    text-align: center;
-    color:rgb(30, 23, 63);
-}
-
-
-form {
-    display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    border-radius: 20px;
+    padding: 80px;
+    backdrop-filter: blur(8px);
+    gap: 1rem;
+}
+
+#formRegister input {
+    padding: 5px;
 }
