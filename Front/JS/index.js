@@ -1,42 +1,41 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const countdownElement = document.getElementById('countdown');
-    const q1   = document.getElementById("container_QCM_1");
-    const q2   = document.getElementById("container_QCM_2");
-    const next = document.querySelector('#next')
-    
-    next.addEventListener('click',function(){
-        q1.style.display = "none";
-        q2.style.display = "flex";
-    })
+const next = document.getElementById('next');
+const question1 = document.getElementById('container_QCM_1');
+const question2 = document.getElementById('container_QCM_2');
+const end       = document.getElementById('end');
+console.log(end);
 
-    function check() {
-        if (countdownElement.textContent === "Temps écoulé" ) {
-            q1.style.display = "none";
-            q2.style.display = "flex";
-            start();
-        }
+const timer = document.getElementById('timer');
+let temps = 10;
+let timerInterval = setInterval(diminuerTemps, 1000); 
+
+function diminuerTemps() {
+    timer.innerText = temps;
+    temps--;
+    if (temps < 0) {
+        question1.style.display = 'none';
+        question2.style.display = 'flex';
+        clearInterval(timerInterval); 
+        resetTimer(); 
+    } else if (temps === 0) {
+        setTimeout(() => {
+            question2.style.display = 'none';
+            end.style.display = 'block';
+        },temps)
     }
+}
 
-    function start() {
-        let count = 10; 
+function resetTimer() {
+    clearInterval(timerInterval);
+    temps = 10;
+    diminuerTemps();
+    timerInterval = setInterval(diminuerTemps, 1000);
+}
 
-        function updateCount() {
-            countdownElement.textContent = count;
-            count--;
-
-            if (count < 0) {
-                clearInterval(counter);
-                countdownElement.textContent = "Temps écoulé";
-                check();
-            }
-        }
-
-        updateCount();
-        const counter = setInterval(updateCount, 1000);
-    }
-    start();
+next.addEventListener('click', () => {
+    question1.style.display = 'none';
+    question2.style.display = 'flex';
+    resetTimer(); 
 });
-
 
 
                  // ========== récupérer les données de l'utilisateur ============== 
