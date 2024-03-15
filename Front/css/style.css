@@ -10,7 +10,8 @@ body{
 #test {
     background-image: url(/Front/img/test_quiz.jpeg);
     background-position: center;
-    background-size: cover;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
     height: 100vh;
 }
 
@@ -23,17 +24,21 @@ body{
 }
 
 .Title-test {
+    position: absolute;
+    top: 10px;
     display: flex;
+    justify-content: space-around;
+    width: 100%;
 }
 
 .Title-test h1 {
-    font-size: 30px;
+    font-size: 35px;
 }
 
 #container_QCM_1,
 #container_QCM_2 {
     backdrop-filter: blur(15px);
-    padding: 30px;
+    padding: 20px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -47,10 +52,9 @@ body{
 
 h1 {
     color: #fff;
-    font-size: 18px;
-    margin-left: 40px;
-    margin-right: 60px;
+    font-size: 25px;
 }
+
 button {
     background: none;
     color: #FFF;
@@ -76,31 +80,31 @@ button:hover {
     background-color: rgba(125, 136, 160, 0.336);
 }
 
-
 #end {
-    background-image: url(/Front/img/test_quiz.jpeg);
-    background-position: center;
-    background-size: cover;
-    height: 100vh;
     display: none;
 }
 
 #end h1 {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    font-size: 40px;
+    font-size: 50px;
 }
 
-/* ============================================ */
+/* ========== page identification ============== */
 
+
+#receptionPage {
+    background-image: url(/Front/img/quizReception.jpeg);
+    background-position: center;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
+    height: 100vh;
+    transition: 1s;
+}
 
 #register {
     background-image: url(/Front/img/Quiz.jpeg);
     background-position: center;
-    background-size: cover;
-    height: 100vh;
+    background-size: 100% 100%;
+    background-repeat: no-repeat; 
 }
 
 .container {
@@ -116,11 +120,44 @@ button:hover {
     justify-content: center;
     align-items: center;
     border-radius: 20px;
-    padding: 80px;
+    padding: 50px;
     backdrop-filter: blur(8px);
     gap: 1rem;
 }
 
 #formRegister input {
     padding: 5px;
+}
+
+/* ======== media screen ========= */
+
+@media screen and (max-width: 900px) {
+    button {
+        width: 300px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    #formRegister {
+        padding: 30px;
+    }
+    button {
+        width: 160px;
+    }
+
+    h1 {
+        font-size: 10px;
+    }
+
+    .Title-test h1 {
+        font-size: 25px;
+    }
+
+    #formRegister input {
+        padding: 0px;
+    }
 }

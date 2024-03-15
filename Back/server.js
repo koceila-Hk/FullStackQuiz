@@ -125,7 +125,6 @@ app.get('/response', async function(req,res){
 });
 
 
-
 // ======= leave page ======= 
 
 app.get('/leave', async (req, res) => {

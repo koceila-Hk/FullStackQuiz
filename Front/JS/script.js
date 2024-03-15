@@ -23,4 +23,11 @@ formRegister.addEventListener('submit', async (e) => {
 });
 
 
-  
+
+// ======== Acuueil Image ===========
+
+const receptionImage = document.getElementById('receptionPage');
+    
+setTimeout(() => {
+    receptionImage.style.display = "none";
+}, 5000);
