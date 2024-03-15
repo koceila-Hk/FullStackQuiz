@@ -17,7 +17,6 @@ async function registerUser(userData) {
     }
 }
 
-
 // ======== requête GET ========
 
 async function clicDroit(nom) {
