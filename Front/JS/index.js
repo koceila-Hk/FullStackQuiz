@@ -12,7 +12,7 @@ let timerInterval = setInterval(diminuerTemps, 1000);
 function diminuerTemps() {
     timer.innerText = temps;
     // temps = temps < 0 ? temps : 1;
-
+    backRefreshPage();
     if (temps === 4) {
         timer.style.color = 'red';
         document.querySelector('.fa-solid').style.color = 'red';
@@ -34,6 +34,15 @@ function diminuerTemps() {
         document.querySelector('.fa-solid').style.color = 'white';
     }
     temps--;
+}
+
+// ======== function back actualize page =========
+
+function backRefreshPage() {
+window.addEventListener('beforeunload', async function () {
+    const data = await backActualizeNav(nom);
+    console.log('Données reçues du serveur :', data);
+  });
 }
 
 // ========== function restTimer ==========
@@ -58,12 +67,13 @@ next.addEventListener('click', () => {
                  
 // ======== ajout clic droit ==========
 
-import { clicDroit, ctrlData, leavePage, answersUser, resizePage } from './fetch.js';
+import { clicDroit, ctrlData, leavePage, answersUser, resizePage, backActualizeNav } from './fetch.js';
 
 const url = new URLSearchParams(window.location.search);
 const nom = url.get("nom");
   
 document.addEventListener('contextmenu', async function() {
+    // window.open('https://www.google.com', '_blank');
     if (endTest.style.display === 'block') {
         return;
     }

@@ -17,7 +17,6 @@ formRegister.addEventListener('submit', async (e) => {
     };
 
     const response = await registerUser(userData);
-    console.log(response); 
 
     window.location.href = './test.html?nom='+nom;
 });

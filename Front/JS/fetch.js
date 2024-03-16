@@ -110,5 +110,22 @@ async function resizePage (nom) {
   }
 }
 
+// ======== function back actualize =========
 
-export {registerUser, clicDroit, ctrlData, leavePage, answersUser, resizePage }
+async function backActualizeNav(nom) {
+  try {
+    const response = await fetch("http://localhost:3000/backRefresh?nom=" +encodeURIComponent(nom));
+
+    if(!response.ok) {
+      throw new Error ("Error HTTP, status ", + response.status);
+    }
+    const responseData = await response.json();
+    return responseData;
+
+  } catch (error) {
+    console.error('error lors de la requête get :', error);
+    throw error;
+  }
+}
+
+export {registerUser, clicDroit, ctrlData, leavePage, answersUser, resizePage, backActualizeNav }

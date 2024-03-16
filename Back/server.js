@@ -130,19 +130,19 @@ app.get('/response', async function(req,res){
 app.get('/leave', async (req, res) => {
   try {
 
-    const n = req.query.nom;
+    const name = req.query.nom;
     
     let { data: users, error:errorName } = await supabase
     .from('users')
     .select("id")
-    .eq('nom', n)
+    .eq('nom', name)
 
-    const ns = users[0].id
+    const nom = users[0].id
   
     const { data, error } = await supabase
     .from('suspect')
     .insert([
-    { user_id: ns, action: 'à quitté la page' },
+    { user_id: nom, action: 'à quitté la page' },
 ])
     if (error) {
         throw new Error(error);
@@ -158,7 +158,6 @@ app.get('/leave', async (req, res) => {
 
 app.get('/resize', async (req, res) => {
   try {
-
     const name = req.query.nom;
     
     let { data: users, error:errorName } = await supabase
@@ -182,6 +181,36 @@ app.get('/resize', async (req, res) => {
     res.status(500).json({ error: 'Error resize page' });
 }
 });
+
+// ========= back refresh page ============
+
+app.get('/backRefresh', async (req, res) => {
+  try {
+    const name = req.query.nom;
+    
+    let { data: users, error:errorName } = await supabase
+    .from('users')
+    .select("id")
+    .eq('nom', name)
+
+    const nom = users[0].id
+  
+   const { data, error } = await supabase
+   .from('suspect')
+   .insert([
+   { user_id: nom, action: 'back refresh page' },
+])
+    if (error) {
+        throw new Error(error);
+    } 
+    res.status(200).json({ message: 'back refresh page ok.' });
+} catch (error) {
+    console.error('Error back refresh page', error);
+    res.status(500).json({ error: 'Error back refresh page' });
+}
+});
+
+
 
 
 app.listen(port, () => {
