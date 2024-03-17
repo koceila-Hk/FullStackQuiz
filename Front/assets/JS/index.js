@@ -41,7 +41,7 @@ function diminuerTemps() {
 function backRefreshPage() {
 window.addEventListener('beforeunload', async function () {
     const data = await backActualizeNav(nom);
-    console.log('Données reçues du serveur :', data);
+    console.log(data);
   });
 }
 
@@ -73,12 +73,15 @@ const url = new URLSearchParams(window.location.search);
 const nom = url.get("nom");
   
 document.addEventListener('contextmenu', async function() {
-    // window.open('https://www.google.com', '_blank');
     if (endTest.style.display === 'block') {
         return;
     }
+
+    clicdroit = true;
+    if (tentativeSuspect()) { 
      const data = await clicDroit(nom);
-     console.log('Données reçues du serveur :', data);
+     console.log(data);
+    }
 });
 
 
@@ -88,6 +91,7 @@ document.addEventListener('keydown', async (event) => {
     if (endTest.style.display === 'block') {
         return;
     }
+
     else if (event.key === "v" && event.ctrlKey) {
         const data = await ctrlData(nom);
         console.log(data);
@@ -103,7 +107,12 @@ document.body.addEventListener('mouseleave', async () => {
     if (endTest.style.display === 'block') {
         return;
     }
+
+    mouseleavePage = true;
+    if (tentativeSuspect()) {
     const data = await leavePage(nom);
+    console.log(data);
+    }
 });
 
 // ========= add answers =========
@@ -127,12 +136,35 @@ async function handleResize() {
     if (endTest.style.display === 'block') {
         return;
     }
+
+    resisedPage = true;
+    if (tentativeSuspect()) {
     const data = await resizePage(nom);
-    return true;
-  }
-  window.onresize = handleResize;
+    console.log(data);
+    }
+}
+window.onresize = handleResize;
 
 
+
+// =========== function tentative suspect ============
+
+// let ctrl = false;
+let resisedPage = false;
+let clicdroit = false;
+let mouseleavePage = false;
+const gif  = document.getElementById('gif');
+const test = document.getElementById('test');
+
+function tentativeSuspect() {
+    if (clicdroit || resisedPage || mouseleavePage) {
+        test.style.display = 'none';
+        gif.style.display  = 'block';
+        return true;
+    } else {
+        return false;
+    }
+}
   
 // document.addEventListener('keydown', async (event) => {
 

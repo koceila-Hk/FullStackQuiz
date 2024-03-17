@@ -8,7 +8,7 @@ body{
 
 
 #test {
-    background-image: url(/Front/img/test_quiz.jpeg);
+    background-image: url(/Front/assets/img/test_quiz.jpeg);
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat; 
@@ -88,11 +88,21 @@ button:hover {
     font-size: 50px;
 }
 
+/* ========= gif ========= */
+
+#gif {
+    background-image: url(/Front/assets/img/GIF.gif);
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+    display: none;
+}
+
 /* ========== page identification ============== */
 
 
 #receptionPage {
-    background-image: url(/Front/img/quizReception.jpeg);
+    background-image: url(/Front/assets/img/quizReception.jpeg);
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat; 
@@ -101,7 +111,7 @@ button:hover {
 }
 
 #register {
-    background-image: url(/Front/img/Quiz.jpeg);
+    background-image: url(/Front/assets/img/Quiz.jpeg);
     background-position: center;
     background-size: 100% 100%;
     background-repeat: no-repeat; 
