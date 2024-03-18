@@ -16,6 +16,11 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
+
+app.get('/', (req, res) => {
+  res.sendFile(__dirname + '../Front/register.html');
+});
+
 // app.get('/api/v1', async (req, res) => {
 //   const {data, error} = await getUsers()
 //   res.json(data)

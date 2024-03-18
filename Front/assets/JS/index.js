@@ -166,15 +166,7 @@ function tentativeSuspect() {
     }
 }
   
-// document.addEventListener('keydown', async (event) => {
 
-//     if (event.key === "v" && event.ctrlKey) {
-//         const req = new XMLHttpRequest()
-//         const url = "http://localhost:3000/ctrl?nom=" + encodeURIComponent(nom)
-//         req.open("GET",url,true)
-//         req.send();
-//     }
-// });
 
 
 
