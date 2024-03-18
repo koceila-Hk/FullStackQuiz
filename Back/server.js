@@ -115,7 +115,7 @@ app.get('/response', async function(req,res){
   const reponse = req.query.reponse
   const rep     = req.query.reponse2
 
-  let { data: users, error:usersError } = await supabase
+  let { data: users, error:errorName } = await supabase
   .from('users')
   .select("id")
   .eq('nom', nom)

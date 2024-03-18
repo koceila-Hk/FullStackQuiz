@@ -13,7 +13,6 @@ async function registerUser(userData) {
         return data;
     } catch (error) {
         console.error('Erreur lors de l\'inscription :', error);
-        throw error;
     }
 }
 
@@ -31,7 +30,6 @@ async function clicDroit(nom) {
       return responseData;
     } catch (error) {
       console.error('Erreur lors de la requête GET :', error);
-      throw error; 
     }
   }
 
@@ -50,7 +48,6 @@ async function clicDroit(nom) {
       return responseData;
     } catch (error) {
       console.error('Erreur lors de la requête GET :', error);
-      throw error; 
     }
   }
 
@@ -68,7 +65,6 @@ async function leavePage(nom) {
           return responseData;
         } catch (error) {
             console.error('Erreur lors de la requête GET :', error);
-            throw error; 
         }
     }
 
@@ -87,7 +83,6 @@ async function answersUser(nom, list) {
 
     } catch (error) {
         console.error('Erreur lors de la requête GET :', error);
-        throw error; 
     }
 }
 
@@ -106,7 +101,6 @@ async function resizePage (nom) {
 
   } catch (error) {
     console.error('error lors de la requête get :', error);
-    throw error;
   }
 }
 
@@ -124,7 +118,6 @@ async function backActualizeNav(nom) {
 
   } catch (error) {
     console.error('error lors de la requête get :', error);
-    throw error;
   }
 }
 
