@@ -45,7 +45,7 @@ window.addEventListener('beforeunload', async function () {
   });
 }
 
-// ========== function restTimer ==========
+// ========== function resetTimer ==========
 
 function resetTimer() {
     clearInterval(timerInterval);
@@ -103,17 +103,22 @@ document.addEventListener('keydown', async (event) => {
 
 // ======= détecter si l'utilisateur a quitté la page ============= 
 
-document.body.addEventListener('mouseleave', async () => {
+
+document.addEventListener("visibilitychange", async (event) => {
     if (endTest.style.display === 'block') {
         return;
     }
 
-    mouseleavePage = true;
+    pageChanged = true;
     if (tentativeSuspect()) {
-    const data = await leavePage(nom);
-    console.log(data);
+        if (document.visibilityState === "visible") {
+            return;
+          } else {
+            const data = await leavePage(nom);
+            console.log(data);
+          }
     }
-});
+})
 
 // ========= add answers =========
 
@@ -152,12 +157,12 @@ window.onresize = handleResize;
 // let ctrl = false;
 let resisedPage = false;
 let clicdroit = false;
-let mouseleavePage = false;
+let pageChanged = false;
 const gif  = document.getElementById('gif');
 const test = document.getElementById('test');
 
 function tentativeSuspect() {
-    if (clicdroit || resisedPage || mouseleavePage) {
+    if (clicdroit || resisedPage || pageChanged) {
         test.style.display = 'none';
         gif.style.display  = 'block';
         return true;
@@ -166,7 +171,3 @@ function tentativeSuspect() {
     }
 }
   
-
-
-
-

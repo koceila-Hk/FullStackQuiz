@@ -1,4 +1,3 @@
-
 import { registerUser } from './fetch.js';
 
 const formRegister = document.getElementById('formRegister');

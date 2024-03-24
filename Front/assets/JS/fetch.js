@@ -16,13 +16,13 @@ async function registerUser(userData) {
     }
 }
 
-// ======== requête GET ========
+// ======== requête ========
 
 async function clicDroit(nom) {
     try {
-      const response = await fetch("http://localhost:3000/nom?nom=" + encodeURIComponent(nom));
+      const response = await fetch("http://localhost:3000/clic?nom=" + encodeURIComponent(nom));
   
-      if (!response.ok) {
+      if(!response.ok) {
         throw new Error('Erreur HTTP, status ' + response.status);
       }
   
@@ -38,9 +38,9 @@ async function clicDroit(nom) {
   
   async function ctrlData(nom) {
     try {
-      const response = await fetch("http://localhost:3000/ctrl?nom=" + encodeURIComponent(nom));
+      const response = await fetch("http://localhost:3000/ctr?nom=" + encodeURIComponent(nom));
   
-      if (!response.ok) {
+      if(!response.ok) {
         throw new Error('Erreur HTTP, status ' + response.status);
       }
   
@@ -57,7 +57,7 @@ async function leavePage(nom) {
     try {
         const response = await fetch("http://localhost:3000/leave?nom=" + encodeURIComponent(nom));
 
-        if (!response.ok) {
+        if(!response.ok) {
             throw new Error('Erreur HTTP, status ' + response.status);
           }
       
