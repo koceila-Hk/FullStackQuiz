@@ -10,11 +10,10 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-import path from 'path';
+// import path from 'path';
 
 app.get('/', (req, res) => {
-  const __dirname = path.resolve('.');
-  res.sendFile(path.join('/Front'));
+  res.sendFile(__dirname + '/Front');
 });
 
 
