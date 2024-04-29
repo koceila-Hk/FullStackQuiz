@@ -51,7 +51,6 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
             console.log('donnée: ',data);
             
-
             return {data , error};
         } catch (error) {
             return { error: error.message };

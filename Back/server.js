@@ -10,11 +10,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 
-// import path from 'path';
+import path from 'path';
 
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/Front');
+  express.static(path.join(__dirname, '/Front'));
 });
+
+
+
 
 
 // app.get('/api/v1', async (req, res) => {
